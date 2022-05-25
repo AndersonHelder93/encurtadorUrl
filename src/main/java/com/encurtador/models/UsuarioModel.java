@@ -18,11 +18,11 @@ public class UsuarioModel {
 	private String password;
 	
 	
-	public Long getInd() {
+	public Long getId() {
 		return id;
 	}
-	public void setInd(Long ind) {
-		this.id = ind;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getLogin() {
 		return login;

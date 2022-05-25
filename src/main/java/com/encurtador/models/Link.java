@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Link {
@@ -13,6 +15,10 @@ public class Link {
 	private Long id;
 	private String urlOriginal;
 	private String urlEncurtada;
+	
+	@ManyToOne
+	@JoinColumn(name="id_usuario", nullable=false)
+	private UsuarioModel idUsuario;
 
 	public Long getId() {
 		return id;
@@ -38,4 +44,13 @@ public class Link {
 		this.urlEncurtada = urlEncurtada;
 	}
 
+	public UsuarioModel getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(UsuarioModel idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	
 }
